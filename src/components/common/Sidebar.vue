@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <el-menu
+    <!--<el-menu
       class="sidebar-el-menu"
       :default-active="onRoutes"
       :collapse="collapse"
@@ -9,7 +9,17 @@
       active-text-color="#fff"
       unique-opened
       router
-    >
+    >-->
+    <el-menu
+            class="sidebar-el-menu"
+            :default-active="onRoutes"
+            :collapse="collapse"
+            background-color="#ffffff"
+            text-color="#23262e"
+            active-text-color="#cc0000"
+            unique-opened
+            router
+      >
       <template v-for="item in items">
         <template v-if="item.subs">
           <el-submenu :index="item.index" :key="item.index">
@@ -55,11 +65,11 @@ export default {
           index: "dashboard",
           title: "系统首页"
         },
-        /* {
+        {
           icon: "el-icon-lx-cascades",
           index: "table",
           title: "基础表格"
-        }, */
+        },
         {
           icon: "el-icon-lx-copy",
           index: "tabs",

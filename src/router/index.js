@@ -4,6 +4,7 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -21,12 +22,14 @@ export default new Router({
                 },
                 {
                     path: '/icon',
-                    component: resolve => require(['../components/page/Icon.vue'], resolve),
+                    // component: resolve => require(['../components/page/Icon.vue'], resolve),
+                    component: () => import("../components/page/Icon"),
                     meta: { title: '自定义图标' }
                 },
                 {
                     path: '/table',
-                    component: resolve => require(['../components/page/BaseTable.vue'], resolve),
+                    // component: resolve => require(['../components/page/BaseTable.vue'], resolve),
+                    component: () => import("../components/page/BaseTable"),
                     meta: { title: '基础表格' }
                 },
                 {
